@@ -1,0 +1,93 @@
+<style>
+
+.announcement-container {
+    background-color: #e0e0e0; /* Your desired background color */
+}
+.container-fluid {
+    margin-top: 0; /* Reset the top margin */
+    padding-top: 0; /* Reset the top padding */
+}
+
+
+
+
+body {
+    padding-top: 70px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.8rem;
+    margin: 0;
+
+}
+
+</style>
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Column: Login Form -->
+            <div class="col-md-6">
+                
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Log In</legend>
+                        <div class="form-group">
+                            {{ form.email.label(class="form-control-label") }}
+                            {% if form.email.errors %}
+                                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.email(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password.label(class="form-control-label") }}
+                            {% if form.password.errors %}
+                                {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.password(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-outline-info") }}
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- Right Column: Information Box -->
+            <div class="col-md-6 announcement-container">
+                <legend class="border-bottom mb-4">Welcome to GreenPot</legend>
+                <p>This application serves as storage for partner information for the Career and Technical Department for Cambridge High School. In this application, vital partner information is stored. For more help click the Help button in the top right. Otherwise, login or signup to continue.</p>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Need An Account? <a class="ml-2" href="{{ url_for('users.register') }}">Sign Up Now</a>
+        </small>
+    </div>
+{% endblock content %}

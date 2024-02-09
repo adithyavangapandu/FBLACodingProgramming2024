@@ -1,0 +1,66 @@
+<!-- partner_view.html -->
+
+{% extends "layout.html" %}
+
+{% block styles %}
+<style>
+    .partner-details {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+
+    .partner-details .partner-feature {
+        margin-bottom: 20px;
+    }
+
+    .partner-details .partner-feature strong {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 1.2em; /* Increased font size */
+    }
+
+    .partner-details .partner-feature p {
+        margin: 0;
+        font-size: 1.1em; /* Increased font size */
+    }
+
+    .partner-details h1 {
+        font-size: 2em; /* Increased font size for the main heading */
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="partner-details">
+    <h1>{{ partner.PartnerName }}</h1>
+    <hr>
+    <div class="partner-feature">
+        <strong>Contact Email:</strong>
+        <p>{{ partner.Email }}</p>
+    </div>
+
+    <div class="partner-feature">
+        <strong>Contact Individual:</strong>
+        <p>{{ partner.ContactIndividual }}</p>
+    </div>
+
+    <div class="partner-feature">
+        <strong>Phone Number:</strong>
+        <p>{{ partner.PhoneNumber }}</p>
+    </div>
+    <div class="partner-feature">
+        <strong>Partner Type:</strong>
+        <p>{{ partner.PartType }}</p>
+    </div>
+    <div class="partner-feature">
+        <strong>Resources:</strong>
+        <p>{{ partner.Rsc }}</p>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .header {
+    background-color: #f2f2f2;
+  }
+
+  .btn-primary {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  .btn-delete {
+    background-color: #FF5733; /* Red */
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  .report-col {
+    font-size: 15px;
+    font-family: 'Arial', sans-serif; /* Change the font family */
+  }
+
+  .partner-name a {
+    text-decoration: none;
+  }
+  .btn-add {
+    background-color: #28a745; /* Green background color */
+    color: #fff; /* White text color */
+    padding: 5px 10px; /* Adjust padding for better appearance */
+    text-decoration: none;
+    border-radius: 5px; /* Add rounded corners */
+    display: inline-block;
+  }
+  .button-container {
+    float: right;
+  }
+
+  .search-container {
+    display: inline-block;
+  }
+</style>
+</head>
+
+<body>
+{% extends "layout.html" %}
+{% block content %}
+
+<main role="main" class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Report</h2>
+    </div>
+    <div class="col-md-6 text-right">
+      <div class="button-container">
+        <a id="downloadBtn" class="btn-primary" href="#">Download Report</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table id="myTable">
+        <tr class="header">
+          <th style="width:20%;">Name</th>
+          <th style="width:20%;">Type</th>
+          <th style="width:20%;">Email</th>
+          <th style="width:20%;">Contact</th>
+          <th style="width:20%;">Phone Number</th>
+          <th style="width:20%;">Resources</th>
+        </tr>
+        {% for partner in partners %}
+          <tr class="partner-row" data-type="{{ partner.PartType }}">
+            <td class="report-col">{{ partner.PartnerName }}</td>
+            <td class="report-col">{{ partner.PartType }}</td>
+            <td class="report-col">{{ partner.Email }}</td>
+            <td class="report-col">{{ partner.ContactIndividual }}</td>
+            <td class="report-col">{{ partner.PhoneNumber }}</td>
+            <td class="report-col">{{ partner.Rsc }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.getElementById('downloadBtn').addEventListener('click', function () {
+    exportTableToCSV('myTable.csv');
+  });
+
+  function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll('table tr');
+
+    // Get the column headers
+    var headers = Array.from(rows[0].querySelectorAll('th')).map(header => header.innerText);
+    csv.push(headers.join(','));
+
+    // Loop through rows
+    for (var i = 1; i < rows.length; i++) {
+      var row = [], cols = rows[i].querySelectorAll('td');
+
+      // Loop through columns
+      for (var j = 0; j < cols.length; j++)
+        row.push(cols[j].innerText);
+
+      csv.push(row.join(','));
+    }
+
+    // Create CSV content
+    var csvContent = csv.join('\n');
+
+    // Create Blob
+    var blob = new Blob([csvContent], { type: 'text/csv' });
+
+    // Create download link and trigger click
+    var link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+
+{% endblock content %}
+
+</body>
+</html>
