@@ -90,12 +90,14 @@
     <div class="col-md-12">
       <table id="myTable">
         <tr class="header">
-          <th style="width:20%;">Name</th>
-          <th style="width:20%;">Type</th>
-          <th style="width:20%;">Email</th>
-          <th style="width:20%;">Contact</th>
-          <th style="width:20%;">Phone Number</th>
+          <th style="width:10%;">Name</th>
+          <th style="width:10%;">Type</th>
+          <th style="width:15%;">Email</th>
+          <th style="width:15%;">Contact</th>
+          <th style="width:15%;">Phone Number</th>
           <th style="width:20%;">Resources</th>
+          <th style="width:15%;">Rate</th>
+
         </tr>
         {% for partner in partners %}
           <tr class="partner-row" data-type="{{ partner.PartType }}">
@@ -105,6 +107,8 @@
             <td class="report-col">{{ partner.ContactIndividual }}</td>
             <td class="report-col">{{ partner.PhoneNumber }}</td>
             <td class="report-col">{{ partner.Rsc }}</td>
+            <td class="report-col">{{ partner.money }} every {{ partner.time }} {{ partner.timeframe }}</td>
+
           </tr>
         {% endfor %}
       </table>

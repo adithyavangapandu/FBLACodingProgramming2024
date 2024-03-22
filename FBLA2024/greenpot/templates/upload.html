@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Database - CSV Upload</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            padding-left: 10px;
+        } 
+    </style>
+</head>
+<body>
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1>Update Partner Database</h1>
+
+    <p>
+       To update the partner database, please upload a CSV file with the following structure:
+    </p>
+
+    <ul>
+        <li><strong>Partner Name</strong> (Required)</li>
+        <li><strong>Contact Email</strong> (Required)</li>
+        <li><strong>Contact Individual</strong></li>
+        <li><strong>Phone Number</strong></li>
+        <li><strong>Partner Type</strong> </li>
+        <li><strong>Resources</strong></li>
+        <li><strong>Money</strong> </li>
+        <li><strong>Time</strong></li>
+        <li><strong>Timeframe</strong></li>
+    </ul>
+
+    <p>
+        * Note that the names of the rows must match exactly with the names above.
+    </p>
+
+    <form method="POST" action="/update-database" enctype="multipart/form-data">
+        <input type="file" name="csv_file" accept=".csv" required>
+        <button type="submit">Upload CSV</button>
+    </form>
+
+{% endblock content %}
+</body>
+</html>

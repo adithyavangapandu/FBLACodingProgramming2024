@@ -1,26 +1,26 @@
-Partner Name,Partner Type,Contact Email,Contact Individual,Phone Number,Resources
-Alpha Corporation,Business,info@alphacorp.com,John Smith,555-123-4567,Software Solutions
-Community Health Clinic,Community,info@healthclinic.org,Jane Doe,555-987-6543,Medical Services
-Green Energy Solutions,Business,contact@greenenergy.com,David Johnson,555-456-7890,Solar Panels and Wind Turbines
-Royal Construction,Business,info@royalconstruction.com,Sarah Brown,555-234-5678,Building Materials and Labor
-Local Food Bank,Community,volunteer@foodbank.org,Mark Wilson,555-876-5432,Food Distribution
-Education Foundation,Community,donations@educationfoundation.org,Emily Taylor,555-345-6789,Educational Grants
-Tech Innovations Inc.,Business,support@techinnovations.com,Michael Lee,555-654-3210,IT Services and Custom Software
-Clean Water Initiative,Community,contact@cleanwaterinitiative.org,Rachel Garcia,555-987-1234,Water Purification Systems
-Fitness World Gym,Business,info@fitnessworld.com,Chris Martinez,555-234-5678,Gym Equipment and Personal Training
-Artisan Crafts Collective,Community,hello@artisancrafts.com,Amy Nguyen,555-876-5432,Handmade Goods and Art Supplies
-City Library Foundation,Community,library@citylibraryfoundation.org,Daniel Clark,555-345-6789,Literacy Programs and Book Donations
-GreenThumb Landscaping,Business,info@greenthumblandscaping.com,Michelle Wong,555-654-3210,Landscape Design and Maintenance
-Animal Rescue League,Community,rescue@animalrescueleague.org,Kevin Patel,555-987-1234,Pet Adoption Services
-Global Aid Foundation,Community,help@globalaidfoundation.org,Sophia Johnson,555-234-5678,Disaster Relief and Humanitarian Aid
-Sustainable Farm Co-op,Community,farm@sustainablecoop.com,Ryan Davis,555-876-5432,Organic Produce and Farming Equipment
-Music Academy,Community,info@musicacademy.com,Jessica Wilson,555-345-6789,Music Lessons and Instrument Rentals
-Tech for Tomorrow,Community,learn@techfortomorrow.org,Ethan Turner,555-654-3210,Coding Classes and Robotics Kits
-Nature Conservation Society,Community,nature@conservationsociety.org,Olivia Adams,555-987-1234,Wildlife Preservation and Habitat Restoration
-Financial Literacy Institute,Community,learn@financialliteracyinstitute.com,Andrew Brown,555-234-5678,Financial Workshops and Budgeting Tools
-Community Theater Group,Community,info@communitytheater.org,Lauren Martinez,555-876-5432,Theater Productions and Acting Classes
-CVS Corporation,Business,info@cvscorp.com,John Doe,555-123-4567,Software Solutions
-Northern Health Clinic,Community,info@northclinic.org,Jane Doe,555-987-6543,Medical Services
-Southern Gas,Business,contact@southerngas.com,David Johnson,555-456-7890,Solar Panels and Wind Turbines
-Milton Construction,Business,info@xyzconstruction2.com,Sarah Brown,555-234-5678,Building Materials and Labor
-Alpharetta Food Bank,Community,volunteer@foodbank2.org,Mark Wilson,555-876-5432,Food Distribution
+Partner Name,Contact Email,Contact Individual,Phone Number,Partner Type,Resources,Money,Time,Timeframe
+Acme Software Solutions,info@acmesoftware.com,Sarah Johnson,555-321-9876,Business,Software development,5000,2,week
+Greenville Community Garden,community@greenvillegarden.org,Mark Wilson,555-654-1234,Community,Gardening supplies and volunteer support,1000,5,month
+Build It Construction,contact@buildit.com,David Lee,555-987-5432,Business,Construction services and materials,15000,1,project
+Sunshine Tutoring,tutoring@sunshine.com,Emily Davis,555-234-8765,Community,Educational services,50,3,hour
+CleanTech Energy,sales@cleantech.com,Michael Thompson,555-456-3210,Business,Renewable energy products,10000,1,month
+Animal Haven Shelter,info@animalhaven.org,Jessica Miller,555-876-2345,Community,Pet supplies and veterinary care,2000,4,week
+The Reading Room Bookstore,books@thereadingroom.com,Susan Baker,555-123-6547,Business,Books and literary events,2500,1,week
+Healthy Bites Catering,orders@healthybites.com,Alex Patel,555-345-9876,Business,Catering services,1000,2,event
+Hopewell Mental Health Clinic,appointments@hopewellclinic.org,Dr. Jennifer Smith,555-765-4321,Community,Counseling and therapy,50,1,session
+The Art Studio,create@theartstudio.com,Lisa Nguyen,555-543-8765,Community,Art classes and supplies,500,6,month
+City Tech Hub,connect@citytechhub.org,Brian Johnson,555-321-5432,Community,Technology workshops,200,4,week
+Green Spaces Landscaping,info@greenspaces.com,Olivia Robinson,555-987-3456,Business,Landscaping and design,8000,1,project
+The Food Pantry,donations@foodpantry.org,Mark Thompson,555-654-8765,Community,Food donations,1500,3,week
+Global Relief Network,support@globalrelief.org,Sofia Martinez,555-234-4321,Community,International aid,5000,2,month
+STEM Explorers,learn@stemexplorers.com,Ethan Carter,555-456-8765,Community,Science and robotics education,300,5,week
+The Fitness Zone,membership@fitnesszone.com,Chris Evans,555-876-3210,Business,Gym memberships and training,100,1,month
+The Wildlife Sanctuary,info@wildlifesanctuary.org,Rachel Adams,555-345-2345,Community,Animal conservation,2500,3,month
+Financial Fitness Workshop,enroll@financialfitness.com,Andrew Wilson,555-876-6543,Community,Financial education,100,2,session
+Community Players Theater,info@communityplayers.org,Lauren Harris,555-543-3456,Community,Theater performances,300,6,month
+Sunshine Solar Solutions,sales@sunshinesolar.com,David Martinez,555-321-4321,Business,Solar panel installation,12000,1,project
+The Literacy Foundation,donate@literacyfoundation.org,Daniel Lee,555-234-9876,Community,Literacy programs,800,4,week
+Mobile Meals,volunteer@mobilemeals.org,Kevin Johnson,555-543-6543,Community,Meal delivery,500,2,week
+Build a Bike Workshop,info@buildabike.org,Michelle Baker,555-765-8765,Community,Bicycle repair and education,300,3,week
+The Community Arts Center,events@communityarts.org,Jessica Thompson,555-987-1234,Community,Art exhibits and classes,1000,5,month
+The Wellness Collective,appointments@wellnesscollective.com,Sarah Davis,555-456-5432,Community,Holistic health services,80,2,session

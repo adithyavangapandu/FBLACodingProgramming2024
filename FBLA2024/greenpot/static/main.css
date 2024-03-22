@@ -2,8 +2,10 @@ body {
   background: #f0f0f0;
   color: #333333;
   margin-top: 4rem;
-  padding-top: 0px; /* Adjust this value according to the height of your fixed navbar */
+  padding-left: 5px;
+  padding-top: 60px; /* Adjust this value according to the height of your fixed navbar */
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
@@ -13,10 +15,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #006400;
 }
 
-.site-header .navbar-nav .nav-link {
-  color: #ffffff;
-  Margin-right: 25px;
-
+.nav-link {
+  color: white !important;  /* Use !important to override any default styles */
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -27,57 +27,34 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-.content-section {
-  background: #f5f5dc;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
+
+
+
+.notification-item {
+  display: flex; /* Allow horizontal layout for partner name and message */
+  padding: 10px; /* Adjust padding as needed */
+  border-bottom: 1px solid #ddd; /* Add a dividing line between notifications */
+  cursor: pointer; /* Indicate clickable area */
 }
 
-.article-title {
-  color: #444444;
+.notification-item.read {  /* Style for read notifications */
+  background-color: #eee; /* Lighten background for visual distinction */
 }
 
-a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
+.notification-item a {  /* Style text within notification */
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Adjust text color as needed */
 }
 
-.article-content {
-  white-space: pre-line;
+.notification-item .partner-name {  /* Assuming a class for partner name */
+  flex: 1; /* Allow partner name to occupy most of the space */
+  font-weight: bold; /* Make partner name bold */
 }
 
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
+.notification-item .message {  /* Assuming a class for message */
+  flex: 2; /* Allow message to occupy more space */
+  font-size: 0.9em; /* Adjust message font size */
+  color: #666; /* Make message slightly greyed out */
 }
 
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
-}
 
-.article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
-}
-
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-}
-
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
-.account-heading {
-  font-size: 2.5rem;
-}

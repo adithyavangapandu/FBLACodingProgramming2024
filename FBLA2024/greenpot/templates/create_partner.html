@@ -1,108 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+.form-row {
+  display: flex; /* Activate flexbox for columns */
+}
+
+.form-row > .col-md-6 {
+  flex: 1; /* Distribute space equally */
+  margin-right: 10px; /* Optional spacing between columns */
+}
+
+.money-time-sentence {
+  /* Style your sentence as needed */
+} 
+</style>
+
 {% extends "layout.html" %}
 
 {% block content %}
 <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
-
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">{{ legend }}</legend>
-                <div class="form-group">
-                    {{ form.PartnerName.label(class="form-control-label") }}
-                    {% if form.PartnerName.errors %}
-                        {{ form.PartnerName(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.PartnerName.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ form.PartnerName.label(class="form-control-label", for="PartnerName") }}
+                            {% if form.PartnerName.errors %}
+                                {{ form.PartnerName(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.PartnerName.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.PartnerName(class="form-control form-control-lg", id="PartnerName") }}
+                            {% endif %}
                         </div>
-                    {% else %}
-                        {{ form.PartnerName(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-		
-                <div class="form-group">
-                    {{ form.PartnerType.label(class="form-control-label") }}
-                    {% if form.PartnerType.errors %}
-                        <select name="{{ form.PartnerType.name }}" class="form-control form-control-lg is-invalid">
-                            {% for value, label in form.PartnerType.choices %}
-                                <option value="{{ value }}" {% if form.PartnerType.data == value %}selected{% endif %}>{{ label }}</option>
-                            {% endfor %}
-                        </select>
-                        <div class="invalid-feedback">
-                            {% for error in form.PartnerType.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+        		
+                        <div class="form-group">
+                            {{ form.PartnerType.label(class="form-control-label", for="PartType") }}
+                            {% if form.PartnerType.errors %}
+                                <select name="{{ form.PartnerType.name }}" class="form-control form-control-lg is-invalid">
+                                    {% for value, label in form.PartnerType.choices %}
+                                        <option value="{{ value }}" {% if form.PartnerType.data == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="invalid-feedback">
+                                    {% for error in form.PartnerType.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <select name="{{ form.PartnerType.name }}" class="form-control form-control-lg" id="PartType">
+                                    {% for value, label in form.PartnerType.choices %}
+                                        <option value="{{ value }}" {% if form.PartnerType.data == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                            {% endif %}
                         </div>
-                    {% else %}
-                        <select name="{{ form.PartnerType.name }}" class="form-control form-control-lg">
-                            {% for value, label in form.PartnerType.choices %}
-                                <option value="{{ value }}" {% if form.PartnerType.data == value %}selected{% endif %}>{{ label }}</option>
-                            {% endfor %}
-                        </select>
-                    {% endif %}
-                </div>
 
-                <div class="form-group">
-                    {{ form.ContactEmail.label(class="form-control-label") }}
-                    {% if form.ContactEmail.errors %}
-                        {{ form.ContactEmail(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.ContactEmail.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+                        <div class="form-group">
+                            {{ form.ContactEmail.label(class="form-control-label", for="ContactEmail") }}
+                            {% if form.ContactEmail.errors %}
+                                {{ form.ContactEmail(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.ContactEmail.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.ContactEmail(class="form-control form-control-lg", id="ContactEmail") }}
+                            {% endif %}
                         </div>
-                    {% else %}
-                        {{ form.ContactEmail(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
 
-                <div class="form-group">
-                    {{ form.ContactIndividual.label(class="form-control-label") }}
-                    {% if form.ContactIndividual.errors %}
-                        {{ form.ContactIndividual(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.ContactIndividual.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+                        <div class="form-group">
+                            {{ form.ContactIndividual.label(class="form-control-label", for="ContactIndividual") }}
+                            {% if form.ContactIndividual.errors %}
+                                {{ form.ContactIndividual(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.ContactIndividual.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.ContactIndividual(class="form-control form-control-lg", id="ContactIndividual") }}
+                            {% endif %}
                         </div>
-                    {% else %}
-                        {{ form.ContactIndividual(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
 
-                <div class="form-group">
-                    {{ form.PhoneNumber.label(class="form-control-label") }}
-                    {% if form.PhoneNumber.errors %}
-                        {{ form.PhoneNumber(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.PhoneNumber.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+                        <div class="form-group">
+                            {{ form.PhoneNumber.label(class="form-control-label", for="PhoneNumber") }}
+                            {% if form.PhoneNumber.errors %}
+                                {{ form.PhoneNumber(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.PhoneNumber.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.PhoneNumber(class="form-control form-control-lg", id="PhoneNumber") }}
+                            {% endif %}
                         </div>
-                    {% else %}
-                        {{ form.PhoneNumber(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
+                    </div>
+                </div>  <!-- Left side ends here -->
+<!-- ----------------------------------------------------------------- -->
 
-                <div class="form-group">
-                    {{ form.Resources.label(class="form-control-label") }}
-                    {% if form.Resources.errors %}
-                        {{ form.Resources(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.Resources.errors %}
+                <div class="col-md-6"> 
+                        <div class="form-group">
+                            {{ form.Resources.label(class="form-control-label", for="Rsc") }}
+                            {% if form.Resources.errors %}
+                                {{ form.Resources(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.Resources.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.Resources(class="form-control form-control-lg", id="Rsc") }}
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset> 
+                                <legend class="form-control-label">Payment Plan</legend> 
+                                <div class="form-row"> 
+                                    <div class="col-md-4">
+                                        {{ form.Money.label(class="form-control-label", for="money") }} 
+                                        {{ form.Money(class="form-control form-control-lg", id="money") }}  
+                                    </div>
+                                    <div class="col-md-4">
+                                        {{ form.NumTime.label(class="form-control-label", for="numTime") }} 
+                                        {{ form.NumTime(class="form-control form-control-lg", id="numTime") }}  
+                                    </div>
+                                    <div class="col-md-4">
+                                        {{ form.Timeframe.label(class="form-control-label", for="timeframe") }} 
+                                        {{ form.Timeframe(class="form-control form-control-lg", id="timeframe") }}  
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.Responsibilities.label(class="form-control-label", for="responsibilities") }} 
+                            {% if form.Responsibilities.errors %}
+                            {{ form.Responsibilities(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                            {% for error in form.Responsibilities.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.Responsibilities(class="form-control form-control-lg", id="responsibilities") }} 
+                            {% endif %}
                         </div>
-                    {% else %}
-                        {{ form.Resources(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
+
+
+                </div> <!-- Right side ends here -->
+<!-- ----------------------------------------------------------------- -->
 
             </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
-            </div>
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-outline-info") }}
+                        </div>
+      
         </form>
  </div>
 {% endblock content %}

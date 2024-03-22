@@ -61,6 +61,58 @@
         <strong>Resources:</strong>
         <p>{{ partner.Rsc }}</p>
     </div>
-
+    <div class="partner-feature">
+      <strong>Payment Plan:</strong>
+        <p> 
+        {% if partner.money %}
+            {% set timeframe_label = partner.timeframe %} 
+            ${{ partner.money }} every {{ partner.time }} 
+            {% set time_int = partner.time | int %}
+            {% if time_int > 1 %} 
+                {{ timeframe_label }}s
+            {% else %} 
+                {{ timeframe_label }} 
+            {% endif %} 
+        {% endif %}
+        </p>
+    </div>
+    <div class="partner-feature">
+        <strong>Responsibilities:</strong>
+        <p>{{ partner.Responsibilities }}</p>
+    </div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notificationModal">
+      Create Notification
+    </button>
 </div>
+
+<div class="modal fade" id="notificationModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Reminder for {{ partner.id }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/create-reminder"> 
+          {{ notification_form.hidden_tag() }}
+          {{ notification_form.reminder_type.label }} {{ notification_form.reminder_type() }}
+          {{ notification_form.custom_message.label }} {{ notification_form.custom_message() }}
+          {{ notification_form.partner_id() }}
+          {{ notification_form.submit() }}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+$('#notificationModal').on('show.bs.modal', function (event) {
+  var partner_id = "{{ partner.id }}";  // Get partner ID from template
+  $('#partner_id').val(partner_id);      // Set the value of the hidden field
+  console.log("Hello")
+});
+</script>
 {% endblock %}

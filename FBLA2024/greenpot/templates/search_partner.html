@@ -127,7 +127,6 @@
 
 
 <div class="sidebar">
- 
 
   <a href="{{ url_for('partners.user_partner') }}" class="btn-add">View My Partners</a>
 
@@ -136,9 +135,10 @@
 
   <a href="#" class="btn-add" id="createReportLink">Generate Report</a>
 
-
-
-
+  {% set update_url = url_for('partners.add_partners_from_csv') %} 
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  <a href="{{ update_url }}" class="btn-add">Update Database (CSV)</a> 
+  {% endwith %}
 </div>
 
 
@@ -174,7 +174,7 @@
       <td style="text-align: center;">
         {% if current_user_id == partner.user.id %}
           <a href="{{ url_for('partners.update_partner', partner_id=partner.id) }}" class="btn btn-primary">Update</a>
-          <a href="{{ url_for('partners.delete_partner', partner_id=partner.id) }}" class="btn btn-delete">Delete</a>
+          <a href="{{ url_for('partners.delete_partner', partner_id=partner.id) }}" class="btn btn-danger">Delete</a>
         {% endif %}
       </td>
     </tr>
